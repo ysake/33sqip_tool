@@ -8,5 +8,12 @@ yaml.each do |e|
     if next_transition = uip_e["next"] then
       puts "#{screen["name"]} => #{next_transition}"
     end
+    if actions = uip_e["actions"] then
+      actions.each do |acts_e|
+        if next_transition = acts_e["next"] then
+          puts "#{screen["name"]} => #{next_transition}"
+        end
+      end
+    end
   end
 end
